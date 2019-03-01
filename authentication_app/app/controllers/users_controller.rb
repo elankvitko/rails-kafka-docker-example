@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.new( user_params )
 
     if @user.save
-      DeliveryBoy.deliver_async( @user.to_json, topic: "randomize_name" )
+      DeliveryBoy.deliver_async( @user.to_json, topic: "apex" )
       render json: @user
     else
       render json: @user.errors
